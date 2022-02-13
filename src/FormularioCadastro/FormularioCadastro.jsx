@@ -1,11 +1,25 @@
 import { Button, FormControlLabel, Switch, TextField } from '@material-ui/core';
-
-import React from 'react';
+import React, { useState } from 'react';
 
 function FormularioCadastro() {
+  const [nome, setNome] = useState('');
+  const [sobrenome, setSobrenome] = useState('');
+  const [cpf, setCpf] = useState('');
+  const [promocoes, setPromocoes] = useState(true);
+  const [novidades, setNovidades] = useState(true);
+
   return (
-    <form>
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+        console.log(nome);
+      }}
+    >
       <TextField
+        value={nome}
+        onChange={(event) => {
+          setNome(event.target.value);
+        }}
         id="nome"
         label="Nome"
         variant="outlined"
@@ -13,6 +27,10 @@ function FormularioCadastro() {
         margin="normal"
       />
       <TextField
+        value={sobrenome}
+        onChange={(event) => {
+          setSobrenome(event.target.value);
+        }}
         id="sobrenome"
         label="Sobrenome"
         variant="outlined"
@@ -20,6 +38,10 @@ function FormularioCadastro() {
         margin="normal"
       />
       <TextField
+        value={cpf}
+        onChange={(event) => {
+          setCpf(event.target.value);
+        }}
         id="cpf"
         label="cpf"
         variant="outlined"
@@ -29,12 +51,30 @@ function FormularioCadastro() {
 
       <FormControlLabel
         label="Promoções"
-        control={<Switch name="promocoes" defaultChecked color="primary" />}
+        control={
+          <Switch
+            onChange={(event) => {
+              setPromocoes(event.target.checked);
+            }}
+            name="promocoes"
+            checked={promocoes}
+            color="primary"
+          />
+        }
       ></FormControlLabel>
 
       <FormControlLabel
         label="Novidades"
-        control={<Switch name="novidades" defaultChecked color="primary" />}
+        control={
+          <Switch
+            onChange={(event) => {
+              setNovidades(event.target.checked);
+            }}
+            checked={novidades}
+            name="novidades"
+            color="primary"
+          />
+        }
       ></FormControlLabel>
 
       <Button type="submit" variant="contained" color="primary">
