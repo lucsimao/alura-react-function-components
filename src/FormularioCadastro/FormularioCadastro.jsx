@@ -5,9 +5,14 @@ import React from 'react';
 function FormularioCadastro() {
   return (
     <form>
-      <TextField id="nome" label="nome" variant="outlined" />
-      <TextField id="sobrenome" label="sobrenome" variant="outlined" />
-      <TextField id="cpf" label="cpf" variant="outlined" />
+      <TextField id="nome" label="nome" variant="outlined" fullWidth />
+      <TextField
+        id="sobrenome"
+        label="sobrenome"
+        variant="outlined"
+        fullWidth
+      />
+      <TextField id="cpf" label="cpf" variant="outlined" fullWidth />
 
       <label>Promoções</label>
       <input type="checkbox" />
