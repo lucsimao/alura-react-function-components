@@ -1,3 +1,4 @@
+import DadosEntrega from './DadosEntrega';
 import DadosPessoais from './DadosPessoais';
 import DadosUsuario from './DadosUsuario';
 import React from 'react';
@@ -7,6 +8,7 @@ function FormularioCadastro({ aoEnviar, validarCpf }) {
     <>
       <DadosPessoais aoEnviar={aoEnviar} validarCpf={validarCpf} />
       <DadosUsuario />
+      <DadosEntrega />
     </>
   );
 }
