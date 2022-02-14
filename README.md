@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Alura Function Components
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is the artifact of the course [React: Function Components, uma abordagem moderna](https://cursos.alura.com.br/course/react-function-components)
 
 ## Available Scripts
 
