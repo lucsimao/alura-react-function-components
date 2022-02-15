@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import { validarCpf, validarNome, validarSenha } from './models/cadastro';
 
 import FormularioCadastro from './FormularioCadastro/FormularioCadastro';
+import ValidacoesCadastro from './context/ValidacoesCadastro';
 
 class App extends Component {
   render() {
@@ -14,14 +15,15 @@ class App extends Component {
         <Typography variant="h3" component="h1" align="center">
           Formulário de cadastro
         </Typography>
-        <FormularioCadastro
-          aoEnviar={aoEnviarForm}
-          validacoes={{
+        <ValidacoesCadastro.Provider
+          value={{
             cpf: validarCpf,
             senha: validarSenha,
             nome: validarNome,
           }}
-        />
+        >
+          <FormularioCadastro aoEnviar={aoEnviarForm} />
+        </ValidacoesCadastro.Provider>
       </Container>
     );
   }
